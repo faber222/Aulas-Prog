@@ -11,9 +11,9 @@ int main() {
   }
   for (i = N; i > 0; i--) {
     if (i % 2 == 0)
-      printf("não é primo ====> %d\n", i);
+      printf("número é par ====> %d\n", i);
     else
-      printf("número é primo ====> %d\n", i);
+      printf("número é ímpar ====> %d\n", i);
   }
   printf("FIM\n");  // finaliza código
 
