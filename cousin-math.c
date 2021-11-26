@@ -1,22 +1,22 @@
 #include <stdio.h>
 
 int main() {
-  int num, i, resultado = 0;
+  int number, iterar, ans = 0;
 
   printf("Digite um número: ");
-  scanf("%d", &num);
+  scanf("%d", &number);
 
-  for (i = 2; i <= num / 2; i++) {
-    if (num % i == 0) {
-      resultado++;
+  for (iterar = 2; iterar <= number / 2; iterar++) {
+    if (number % iterar == 0) {
+      ans++;
       break;
     }
   }
 
-  if (resultado == 0)
-    printf("%d é um número primo\n", num);
+  if (ans == 0)
+    printf("%d é um número primo\n", number);
   else
-    printf("%d não é um número primo\n", num);
+    printf("%d não é um número primo\n", number);
 
   return 0;
 }
