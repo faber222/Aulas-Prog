@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-  int sizeValue, amountValue;
+  int shapeValue, amountValue;
 
   int processValue = 1;
   int variable1;
@@ -13,9 +13,9 @@ int main() {
 
   do {
     printf("\nInput the size of individual shapes (Number)\n");
-    scanf("%i", &sizeValue);
-  } while (sizeValue < 2);
-  printf("\nThe size inputed is = %d\n", sizeValue);
+    scanf("%i", &shapeValue);
+  } while (shapeValue < 2);
+  printf("\nThe size inputed is = %d\n", shapeValue);
 
   do {
     printf("\nInput the number of triangles that will be printed \n");
@@ -37,7 +37,7 @@ int main() {
       triangle = odd;
     }
 
-    while (variable1 < sizeValue) {
+    while (variable1 < shapeValue) {
       variable2 = 0;
 
       while (variable2 <= variable1) {
@@ -53,8 +53,6 @@ int main() {
 
     processValue++;
   }
-
-  printf("\nOperationg Finished!\n");
 
   return 0;
 }
