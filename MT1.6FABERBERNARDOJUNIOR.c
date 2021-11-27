@@ -4,8 +4,8 @@ int main() {
   int shapeValue, amountValue;
 
   int processValue = 1;
-  int variable1;
-  int variable2;
+  int lines;
+  int columns;
 
   char even;
   char odd;
@@ -29,7 +29,7 @@ int main() {
   while (processValue <= amountValue) {
     printf("\nPrinting triangle Number = %d\n", processValue);
 
-    variable1 = 0;
+    lines = 0;
 
     if (processValue % 2 == 0) {
       triangle = even;
@@ -37,18 +37,18 @@ int main() {
       triangle = odd;
     }
 
-    while (variable1 < shapeValue) {
-      variable2 = 0;
+    while (lines < shapeValue) {
+      columns = 0;
 
-      while (variable2 <= variable1) {
+      while (columns <= lines) {
         printf("%c", triangle);
 
-        variable2++;
+        columns++;
       }
 
       printf("\n");
 
-      variable1++;
+      lines++;
     }
 
     processValue++;
