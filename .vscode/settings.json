@@ -1,3 +1,7 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "library.C": "cpp",
+        "libraryMath.C": "cpp"
+    }
 }
