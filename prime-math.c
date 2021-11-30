@@ -1,3 +1,11 @@
+/*
+AUTHOR: FABER BERNARDO JUNIOR
+DATE: 11/30/2021
+PROGRAM SYNOPSIS: Compute the input value to check if it is a prime number
+ENTRY DATA: number
+OUTPUT DATA: ans
+*/
+
 #include <stdio.h>
 
 int main() {

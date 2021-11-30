@@ -1,3 +1,11 @@
+/*
+AUTHOR: FABER BERNARDO JUNIOR
+DATE: 11/30/2021
+PROGRAM SYNOPSIS: Compute the imput to make a series of triangles even and odd
+ENTRY DATA: shapeValue, amountValue
+OUTPUT DATA: triangle
+*/
+
 #include <stdio.h>
 
 int main() {

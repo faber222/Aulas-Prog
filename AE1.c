@@ -1,9 +1,9 @@
 /*
-AUTOR: FABER BERNARDO JUNIOR
-DATA: 30/11/2021
-SINOPSE DO PROGRAMA: Computar valores de F(x) dado um intervalo.
-DADOS DE ENTRADA: a, b
-DADOS DE SAIDA: media
+AUTHOR: FABER BERNARDO JUNIOR
+DATE: 11/30/2021
+PROGRAM SYNOPSIS: Compute values ​​of F(x) given an interval.
+ENTRY DATA: a, b
+OUTPUT DATA: media
 */
 
 #include <stdio.h>
@@ -14,21 +14,22 @@ int main() {
 
   output = 0;
 
-  printf("Para a função f(x)=7x-9, forneça um range de valores de a até b\n");
-  printf("Os valores de entrada devem ser maiores que 0\n");
+  printf(
+      "For the function f(x)=7x-9, give a range of values ​​from a to b\n");
+  printf("Input values ​​must be greater than 0\n");
 
   do {
-    printf("Entre com o valor de a\n");
+    printf("Enter the value of a\n");
     scanf("%d", &a);
 
-    printf("Entre com o valor de b\n");
+    printf("Enter the value of b\n");
     scanf("%d", &b);
 
-    if (a > b) printf("O valor de a não pode ser maior que b\n");
+    if (a > b) printf("The value of a cannot be greater than b\n");
 
   } while (a > b);
   if (a <= 0 && b <= 0) {
-    printf("O valor de A e B não podem ser negativos...\n");
+    printf("The value of A and B cannot be negative...\n");
     return 0;
   }
 

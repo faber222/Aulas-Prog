@@ -1,3 +1,11 @@
+/*
+AUTHOR: FABER BERNARDO JUNIOR
+DATE: 11/30/2021
+PROGRAM SYNOPSIS: Compute the imput at two values and make a calc with them
+ENTRY DATA: number1, number2
+OUTPUT DATA: number1+number2
+*/
+
 #include <stdio.h>
 
 int main(void) {

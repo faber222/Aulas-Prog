@@ -1,3 +1,11 @@
+/*
+AUTHOR: FABER BERNARDO JUNIOR
+DATE: 11/30/2021
+PROGRAM SYNOPSIS: Compute the imput at two values and make a factorial of them
+ENTRY DATA: nCount, mCount
+OUTPUT DATA: out
+*/
+
 #include <stdio.h>
 
 int main() {
