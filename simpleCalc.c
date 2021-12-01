@@ -26,7 +26,7 @@ int main(void) {
   scanf(" %c", &operator);
   scanf("%f", &number2);
 
-  printf("Calculating: %.2f %c %.2f = ", number1, operator, number2);
+  printf("Calculating: %.2f %c %.2f = \n", number1, operator, number2);
 
   switch (operator) {
     case '+':
