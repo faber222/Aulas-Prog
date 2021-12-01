@@ -1,3 +1,11 @@
+/*
+AUTHOR: UNKNOW
+DATE: 11/30/2021
+PROGRAM SYNOPSIS: THIS IS A LIBRARY FOR SEARCH CODES IN PORTUGUESE
+ENTRY DATA: NULL
+OUTPUT DATA: NULL-
+*/
+
 #include <conio.h>
 #include <math.h>  //necessária para usar as funções matemáticas
 #include <stdio.h>

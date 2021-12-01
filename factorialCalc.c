@@ -11,9 +11,9 @@ OUTPUT DATA: out
 int main() {
   float imputN, nCount, fatN, mCount, imputM, fatM, out;
 
-  printf("Entre com o número N\n");
+  printf("Enter the imput N\n");
   scanf("%f", &nCount);
-  printf("Entre com o número M\n");
+  printf("Enter the imput M\n");
   scanf("%f", &mCount);
 
   imputN = nCount;
@@ -31,7 +31,8 @@ int main() {
   }
   out = (fatN * 2) / (fatM + 1);
 
-  printf("Valor de saida é %f, o valor de N é %.1f e o valor de M é %.1f\n",
-         out, fatN, fatM);
+  printf(
+      "The output value is %f, the N value is %.1f and the M value is %.1f\n",
+      out, fatN, fatM);
   return 0;
 }
