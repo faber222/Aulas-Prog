@@ -16,6 +16,11 @@ int main(void) {
   printf("Enter the number at series that you want\n");
   scanf("%f", &parallelSeries);
 
+  while (parallelSeries <= 0) {
+    printf("Enter the number greatest them 0\n");
+    scanf("%f", &parallelSeries);
+  }
+
   printf("\nEnter the first resistor value\n");
   scanf("%f", &resistor1);
 
@@ -27,7 +32,17 @@ int main(void) {
     resistor1 = parallelResult;
     printf("\nThe new value at the resistor is %f\n", resistor1);
   }
+
   result = parallelResult;
-  printf("\nThe result is %f\n", result);
+
+  if (result <= 0.009) {
+    result = result * 1000;
+    printf("\nThe result is %.3f mΩ \n", result);
+  } else if (result >= 1000) {
+    result = result / 1000;
+    printf("\nThe result is %.3f KΩ \n", result);
+  } else {
+    printf("\nThe result is %.3f Ω \n", result);
+  }
   return 0;
 }
