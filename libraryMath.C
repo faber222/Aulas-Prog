@@ -6,7 +6,6 @@ ENTRY DATA: NULL
 OUTPUT DATA: NULL-
 */
 
-#include <conio.h>
 #include <math.h>  //necessária para usar as funções matemáticas
 #include <stdio.h>
 
@@ -76,6 +75,5 @@ int main(void) {
   printf("Logaritmo de x na base 10 %.2f = %.2f \n", x, logaritmo_xbase10);
   printf("\n----------------------------------------------------\n\n");
 
-  getch();
   return (0);
 }
