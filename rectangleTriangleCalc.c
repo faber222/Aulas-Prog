@@ -9,27 +9,27 @@ OUTPUT DATA: result
 #include <stdio.h>
 #define PI 3.14159265
 
-float angle, sen, coss, tg;
+float angle, sinValue, cosValue, tgValue;
 
-void Seno() {
+void Sin() {
   printf("\nEnter the angle value\n");
   scanf("%f", &angle);
-  sen = sin(angle * PI / 180);
-  printf("\nThe sin value is %f = %f\n", angle, sen);
+  sinValue = sin(angle * PI / 180);
+  printf("\nThe sin value is %f = %f\n", angle, sinValue);
 }
 
-void Cosseno() {
+void Coss() {
   printf("\nEnter the angle value\n");
   scanf("%f", &angle);
-  coss = cos(angle * PI / 180);
-  printf("\nThe cos value is %f = %f\n", angle, coss);
+  cosValue = cos(angle * PI / 180);
+  printf("\nThe cos value is %f = %f\n", angle, cosValue);
 }
 
-void Tangente() {
+void Tg() {
   printf("\nEnter the angle value\n");
   scanf("%f", &angle);
-  tg = tan(angle * PI / 180);
-  printf("\nThe tg value is %f = %f\n", angle, tg);
+  tgValue = tan(angle * PI / 180);
+  printf("\nThe tg value is %f = %f\n", angle, tgValue);
 }
 
 int main() {
@@ -98,21 +98,21 @@ int main() {
 
           switch (imputOpposite) {
             case 1:
-              Seno();
+              Sin();
               printf("\nEnter the value at hypotenuse\n");
               scanf("%f", &hypotenuse);
 
-              result = sen * hypotenuse;
+              result = sinValue * hypotenuse;
               printf("\nThe value at opposite Collared is %.2f\n\n", result);
               imputOpposite = 4;
 
               break;
             case 2:
-              Tangente();
+              Tg();
               printf("\nEnter the value at adjacent collared\n");
               scanf("%f", &adjacentCollared);
 
-              result = tg * adjacentCollared;
+              result = tgValue * adjacentCollared;
               printf("\nThe value at adjacent Collared is %.2f\n\n", result);
               imputOpposite = 4;
 
@@ -138,21 +138,21 @@ int main() {
 
           switch (imputAdjacent) {
             case 1:
-              Cosseno();
+              Coss();
               printf("\nEnter the value at hypotenuse\n");
               scanf("%f", &hypotenuse);
 
-              result = coss * hypotenuse;
+              result = cosValue * hypotenuse;
               printf("\nThe value at adjacent Collared is %.2f\n\n", result);
               imputAdjacent = 4;
 
               break;
             case 2:
-              Tangente();
+              Tg();
               printf("\nEnter the value at opposite collared\n");
               scanf("%f", &oppositeCollared);
 
-              result = (oppositeCollared / tg);
+              result = (oppositeCollared / tgValue);
               printf("\nThe value at adjacent Collared is %.2f\n\n", result);
               imputAdjacent = 4;
 
@@ -179,21 +179,21 @@ int main() {
 
           switch (imputHypotenuse) {
             case 1:
-              Seno();
+              Sin();
               printf("\nEnter the value at opposite Collared\n");
               scanf("%f", &oppositeCollared);
 
-              result = (oppositeCollared / sen);
+              result = (oppositeCollared / sinValue);
               printf("\nThe value at hypotenuse is %.2f\n\n", result);
               imputHypotenuse = 4;
 
               break;
             case 2:
-              Cosseno();
+              Coss();
               printf("\nEnter the value at adjacent collared\n");
               scanf("%f", &adjacentCollared);
 
-              result = (adjacentCollared / coss);
+              result = (adjacentCollared / cosValue);
               printf("\nThe value at hypotenuse is %.2f\n\n", result);
               imputHypotenuse = 4;
 
