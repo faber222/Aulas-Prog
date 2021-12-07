@@ -3,12 +3,14 @@
 
 ## Run and Debug your code
 
---For running and debug using the Windows OS, you need to install MinGW Installation Manager
---Install the entire instance of GCC
---Change the environment variables, in the path, edit and create the folder c:\MinGW\bin
---After, go to vscode, press F5, and edit the lauch.json and c_cpp_properties.json, maybe you need to create this folder
-
+<!--ts-->
+--For running and debug using the Windows OS, you need to install MinGW Installation Manager.
+--Install the entire instance of GCC.
+--Change the environment variables, in the path, edit and create the folder c:\MinGW\bin.
+--After, go to vscode, press F5, and edit the lauch.json and c_cpp_properties.json, maybe you need to create this folder.
+<!--te-->
 ### For edit launch.json:
+
 
 <!--ts-->
 * "version": "0.2.0",
