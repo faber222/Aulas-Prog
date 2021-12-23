@@ -5,6 +5,7 @@ PROGRAM SYNOPSIS: Compute the imput at two value for calc the rectangle triangle
 ENTRY DATA: imput
 OUTPUT DATA: result
 */
+
 #include <math.h>
 #include <stdio.h>
 #define PI 3.14159265
