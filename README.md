@@ -1,90 +1,52 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Aulas Prog" />
+# LEARNING C
 
-  &#xa0;
-
-  <!-- <a href="https://aulasprog.netlify.app">Demo</a> -->
-</div>
-
-<h1 align="center">Aulas Prog</h1>
-
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/aulas-prog?color=56BEB8">
-
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/aulas-prog?color=56BEB8">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/aulas-prog?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/faber222/aulas-prog?color=56BEB8">
-
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/aulas-prog?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/aulas-prog?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/aulas-prog?color=56BEB8" /> -->
-</p>
-
-<!-- Status -->
-
-<!-- <h4 align="center"> 
-	🚧  Aulas Prog 🚀 Under construction...  🚧
-</h4> 
-
-<hr> -->
-
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/faber222" target="_blank">Author</a>
-</p>
-
-<br>
-
-## :dart: About ##
-
-This is just a folder where i put some files about my studies, but is free for use in another service or project.
-
-## :sparkles: Features ##
-
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
-
-## :rocket: Technologies ##
-
-The following tools were used in this project:
-
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-
-## :white_check_mark: Requirements ##
-
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-
-## :checkered_flag: Starting ##
-
-```bash
-# Clone this project
-$ git clone https://github.com/faber222/aulas-prog
-
-# Access
-$ cd aulas-prog
-```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+## Run and Debug your code
 
 
-Made with :heart: by <a href="https://github.com/faber222" target="_blank">faber222</a>
+<p>--For running and debug using the Windows OS, you need to install MinGW Installation Manager.</p>
+<p>--Install the entire instance of GCC.</p>
+<p>--Change the environment variables, in the path, edit and create the folder c:\MinGW\bin.</p>
+<p>--After, go to vscode, press F5, and edit the lauch.json and c_cpp_properties.json, maybe you need to create this folder.</p>
 
-&#xa0;
 
-<a href="#top">Back to top</a>
+
+### For edit launch.json:
+
+
+<!--ts-->
+* "version": "0.2.0",
+* "configurations": 
+* "name": "(gdb) Iniciar",
+* "type": "cppdbg",
+* "request": "launch",
+* "program": "insira o nome do programa, por exemplo ${workspaceFolder}/a.out", <--change to "${workspaceFolder}/a.exe"-->
+* "args": [],
+* "stopAtEntry": false,
+* "cwd": "${fileDirname}", <--change to "{workspaceFolder}"-->
+* "environment": [],
+* "externalConsole": false, <--change to true-->
+* "MIMode": "gdb",
+* "miDebuggerPath": "/path/to/gdb", <--edit this for "C:\\MinGW\\bin\\gdb.exe", use '\\' for make a dir-->
+* "setupCommands": 
+                
+* "description": "Habilitar a reformatação automática para gdb",
+* "text": "-enable-pretty-printing",
+* "ignoreFailures": true
+                
+### For edit c_cpp_properties.json:
+
+* "configurations": 
+        
+* "name": "Linux",
+* "includePath": 
+* "${workspaceFolder}/**"
+
+* "defines": [],
+* "compilerPath": "/path/to/gdb", <--Change to "C:\\MinGW\\bin\\gcc"-->
+* "cStandard": "gnu17",
+* "cppStandard": "gnu++14",
+* "intelliSenseMode": "linux-gcc-x64"
+        
+* "version": 4
+
+<!--te-->
