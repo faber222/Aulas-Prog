@@ -48,7 +48,7 @@
 
 For running and debug using the Windows OS, you need to install MinGW Installation Manager.
 Install the entire instance of GCC.
-hange the environment variables, in the path, edit and create the folder c:\MinGW\bin.
+Change the environment variables, in the path, edit and create the folder c:\MinGW\bin.
 After, go to vscode, press F5, and edit the lauch.json and c_cpp_properties.json, maybe you need to create this folder.
 All the steps is under this site https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html 
 
