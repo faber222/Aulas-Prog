@@ -30,7 +30,7 @@
 	🚧  Aulas-Prog 🚀 Under construction...  🚧
 </h4> 
 
-<hr> -->
+<hr> 
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -46,11 +46,11 @@
 
 ## :dart: About ##
 
-<p>--For running and debug using the Windows OS, you need to install MinGW Installation Manager.</p>
-<p>--Install the entire instance of GCC.</p>
-<p>--Change the environment variables, in the path, edit and create the folder c:\MinGW\bin.</p>
-<p>--After, go to vscode, press F5, and edit the lauch.json and c_cpp_properties.json, maybe you need to create this folder.</p>
-<p>--All the steps is under this site https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html </p>
+For running and debug using the Windows OS, you need to install MinGW Installation Manager.
+Install the entire instance of GCC.
+hange the environment variables, in the path, edit and create the folder c:\MinGW\bin.
+After, go to vscode, press F5, and edit the lauch.json and c_cpp_properties.json, maybe you need to create this folder.
+All the steps is under this site https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html 
 
 ## :sparkles: Features ##
 
@@ -79,14 +79,20 @@ $ git clone https://github.com/faber222/Aulas-Prog
 
 # Access
 $ cd Aulas-Prog
+$ git switch windows
+$ git pull
 
 # Open VScode
 $ code .
 
 # Create the c_cpp_properties.json
+# On this folder, you might to be change, "compilerPath": "C:\\MinGW\\bin\\gcc",
 $ cd .vscode
-$ mkdir c_cpp_properties.json
-# The server will initialize in the <http://localhost:3000>
+
+# For compiler, press F6, this will create a executable code 
+# Or use this command
+$ gcc -g {fileNameDir} -c
+$ a.exe
 ```
 
 ## :memo: License ##
