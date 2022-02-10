@@ -1,33 +1,33 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Aulas Prog" />
+  <img src="./.github/app.gif" alt="Aulas-Prog" />
 
   &#xa0;
 
   <!-- <a href="https://aulasprog.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Aulas Prog</h1>
+<h1 align="center">Aulas-Prog</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/aulas-prog?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/Aulas-Prog?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/aulas-prog?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/Aulas-Prog?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/aulas-prog?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/Aulas-Prog?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/faber222/aulas-prog?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/faber222/Aulas-Prog?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/aulas-prog?color=56BEB8" /> 
+  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/Aulas-Prog?color=56BEB8" /> 
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/aulas-prog?color=56BEB8" /> 
+  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/Aulas-Prog?color=56BEB8" /> 
 
-  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/aulas-prog?color=56BEB8" /> 
+  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/Aulas-Prog?color=56BEB8" /> 
 </p>
 
 <!-- Status -->
 
- <h4 align="center"> 
-	🚧  Aulas Prog 🚀 Under construction...  🚧
+<h4 align="center"> 
+	🚧  Aulas-Prog 🚀 Under construction...  🚧
 </h4> 
 
 <hr> 
@@ -46,32 +46,51 @@
 
 ## :dart: About ##
 
-This is just a folder where i put some files about my studies, but is free for use in another service or project.
+For running and debug using the Windows OS, you need to install MinGW Installation Manager.
+Install the entire instance of GCC.
+Change the environment variables, in the path, edit and create the folder c:\MinGW\bin.
+After, go to vscode, press F5, and edit the lauch.json and c_cpp_properties.json, maybe you need to create this folder.
+All the steps is under this site https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html
+
+If you are using Linux OS, you don't need to do anything, just press F5 to debug or F6 to compile the code.
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Install MinGW;\
+:heavy_check_mark: Change the environment variables;\
+:heavy_check_mark: Edit Path and create the folder C:\MinGW\bin;
 
 ## :rocket: Technologies ##
 
 The following tools were used in this project:
 
+- [MinGW](https://ufpr.dl.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe)
+- [Tutorial](https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html)
+- [Git](https://git-scm.com/)
 - [C](https://www.learn-c.org/)
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [C](https://www.learn-c.org/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [MinGW](https://ufpr.dl.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe) installed.
 
 ## :checkered_flag: Starting ##
 
 ```bash
 # Clone this project
-$ git clone https://github.com/faber222/aulas-prog
+$ git clone https://github.com/faber222/Aulas-Prog
 
 # Access
-$ cd aulas-prog
+$ cd Aulas-Prog
+$ git switch main
+$ git pull
+
+# Open VScode
+$ code .
+
+# For compiler, press F6, this will create a executable code 
+# Or use this command
+$ gcc -g {fileNameDir} -c
+$ a.out
 ```
 
 ## :memo: License ##
