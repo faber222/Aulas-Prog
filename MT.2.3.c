@@ -2,167 +2,195 @@
 #include <stdlib.h>
 #include <time.h>
 
-/**********************************/
-/***** DEFINIÇÕES DESTE MÓDULO  ****/
-/**********************************/
+#define maxSize 10
+#define maxShots 15
+#define maxName 30
 
-#define TAM_MAT 10
-#define MAX_TIROS 15
-#define MAX_NOME 30
+#define free 0
+#define aircraftCarrier 1
+#define frigate 2
+#define submarine 3
 
-#define LIVRE 0
-#define PORTA_AVIOES 1
-#define FRAGATA 2
-#define SUBMARINO 3
+int warZone[maxSize][maxSize];
+int shotCounter = 0;
+int score = 0;
+char name[maxName];
+int x_chosen;
+int y_chosen;
 
-/**********************************/
-/***** VARIÁVEIS GLOBAIS **********/
-/**********************************/
-
-int ZonaDeGuerra[TAM_MAT][TAM_MAT]; /* Matriz do espaço de batalha */
-int ContadorTiros = 0;
-int PontuacaoFinal = 0; /* acumula a pontuação do jogador */
-char nome[MAX_NOME];
-int x_sorteado;
-int y_sorteado;
-
-/***********************************/
-/****  FUNÇÕES DESTE MÓDULO ********/
-/***********************************/
-
-/***** FUNÇÕES DE INICIALIZAÇÃO ****/
-
-void ZerarMatriz() {
+void resetMatrix() {
   int i, j;
 
-  for (i = 0; i < TAM_MAT; i++)
-    for (j = 0; j < TAM_MAT; j++) ZonaDeGuerra[i][j] = LIVRE;
+  for (i = 0; i < maxSize; i++)
+    for (j = 0; j < maxSize; j++) warZone[i][j] = free;
 }
 
-void SortearCasa() {
+void randHouse() {
   do {
     /* generate secret number: */
-    x_sorteado = rand() % TAM_MAT;
-    y_sorteado = rand() % TAM_MAT;
-  } while (ZonaDeGuerra[x_sorteado][y_sorteado] != LIVRE);
+    x_chosen = rand() % maxSize;
+    y_chosen = rand() % maxSize;
+  } while (warZone[x_chosen][y_chosen] != free);
 }
 
-void PosicionarFragatas() {
-  int i;
-  for (i = 0; i < 4; i++) {
-    SortearCasa();
-    ZonaDeGuerra[x_sorteado][y_sorteado] = FRAGATA;
-  }
-}
-
-void PosicionarSubmarinos() {
+void positionFrigates() {
   int i;
   for (i = 0; i < 5; i++) {
-    SortearCasa();
-    ZonaDeGuerra[x_sorteado][y_sorteado] = SUBMARINO;
+    randHouse();
+    warZone[x_chosen][y_chosen] = frigate;
   }
 }
 
-void PosicionarPortaAvioes() {
-  SortearCasa();
-  ZonaDeGuerra[x_sorteado][y_sorteado] = PORTA_AVIOES;
+void positionSubmarines() {
+  int i;
+  for (i = 0; i < 3; i++) {
+    randHouse();
+    warZone[x_chosen][y_chosen] = submarine;
+  }
 }
 
-void PosicionarNavios() {
-  /* initialize random seed: */
+void positionAircraftCarrier() {
+  int i;
+  for (i = 0; i < 2; i++) {
+    randHouse();
+    warZone[x_chosen][y_chosen] = aircraftCarrier;
+  }
+}
+
+void positionShips() {
   srand(time(NULL));
 
-  PosicionarPortaAvioes();
-  PosicionarFragatas();
-  PosicionarSubmarinos();
+  positionAircraftCarrier();
+  positionFrigates();
+  positionSubmarines();
 }
 
-/*** FUNÇÕES DE IMPRESSÃO NA TELA **/
-
-void ImprimeLinha(int linha) {
+void printLine(int line) {
   int j;
 
-  printf("     ");
-  for (j = 0; j < TAM_MAT; j++) {
-    printf("| %2d ", ZonaDeGuerra[linha][j]);
+  printf(" ");
+  for (j = 0; j < maxSize; j++) {
+    printf(" | %2d", warZone[line][j]);
   }
-  printf("|\n");
-  printf("     +----+----+----+----+----+----+----+----+----+----+\n");
+  printf(" |\n ");
+  printf("    +----+----+----+----+----+----+----+----+----+----+\n");
 }
 
-void ImprimeLinhaEscondida(int linha) {
+void printLineHidden(int line) {
   int j;
 
-  printf("     ");
-  for (j = 0; j < TAM_MAT; j++) {
-    if (ZonaDeGuerra[linha][j] >= 0 && ZonaDeGuerra[linha][j] <= 3)
-      printf("| -- ");
+  printf(" ");
+  for (j = 0; j < maxSize; j++) {
+    if (warZone[line][j] >= 0 && warZone[line][j] <= 3)
+      printf(" |   ");
     else
-      printf("| %2d ", ZonaDeGuerra[linha][j]);
+      printf(" | %2d", warZone[line][j]);
   }
-  printf("|\n");
-  printf("     +----+----+----+----+----+----+----+----+----+----+\n");
+  printf(" |\n ");
+  printf("    +----+----+----+----+----+----+----+----+----+----+\n");
 }
 
-void ImprimeMatrizTudo() {
+void printMatrixAll() {
   int i;
-
-  printf("     +----+----+----+----+----+----+----+----+----+----+\n");
-  for (i = 0; i < TAM_MAT; i++) ImprimeLinha(i);
+  printf("\n\n");
+  printf("        0    1    2    3    4    5    6    7    8    9  \n");
+  printf(" ");
+  printf("    +----+----+----+----+----+----+----+----+----+----+\n");
+  for (i = 0; i < maxSize; i++) {
+    printf(" %d ", i);
+    printLine(i);
+  }
 }
 
-void ImprimeMatrizEscondida() {
+void printMatrixHidden() {
   int i;
-
-  printf("     +----+----+----+----+----+----+----+----+----+----+\n");
-  for (i = 0; i < TAM_MAT; i++) ImprimeLinhaEscondida(i);
+  printf("\n\n");
+  printf("        0    1    2    3    4    5    6    7    8    9  \n");
+  printf(" ");
+  printf("    +----+----+----+----+----+----+----+----+----+----+\n");
+  for (i = 0; i < maxSize; i++) {
+    printf(" %d ", i);
+    printLineHidden(i);
+  }
 }
 
 int Tiro() {
+  printMatrixHidden();
   int i, j;
-  int posicaoTiro[TAM_MAT][TAM_MAT];
-  // add posi~ção while para evitar numeros > 9 e < 1
 
-  printf("\nEntre com a posicao de x\n");
-  scanf("%d", &i);
-  printf("\nEntre com a posicao de y\n");
-  scanf("%d", &j);
+  do {
+    printf("\nEnter the position of X(horizontal)\n");
+    scanf("%d", &j);
+  } while (j > 9 || j < 0);
+  do {
+    printf("\nEnter the position of y(vertical)\n");
+    scanf("%d", &i);
+  } while (i < 0 || i > 9);
 
-  if (posicaoTiro[i][j] == LIVRE) {
-    printf("\nVocê errou, tente novamente\n");
-  } else if (posicaoTiro[i][j] == FRAGATA) {
-    printf("\nVocê acertou uma Fragata\n");
-    PontuacaoFinal = PontuacaoFinal + 3;
-  } else if (posicaoTiro[i][j] == SUBMARINO) {
-    printf("\nVocê acertou um Submarino\n");
-    PontuacaoFinal = PontuacaoFinal + 5;
-  } else if (posicaoTiro[i][j] == PORTA_AVIOES) {
-    printf("\nVocê acertou um Porta Avioes\n");
-    PontuacaoFinal = PontuacaoFinal + 10;
+  if (warZone[i][j] == free) {
+    printf("\nMiss, try again\n");
+    shotCounter++;
+    warZone[i][j] = 10;
+  } else if (warZone[i][j] == frigate) {
+    printf("\nYou hit a frigate\n");
+    shotCounter++;
+    score = score + 3;
+    warZone[i][j] = 10;
+  } else if (warZone[i][j] == submarine) {
+    printf("\nYou hit a submarine\n");
+    shotCounter++;
+    score = score + 5;
+    warZone[i][j] = 10;
+  } else if (warZone[i][j] == aircraftCarrier) {
+    printf("\nYou hit a aircraft carrier\n");
+    shotCounter++;
+    score = score + 10;
+    warZone[i][j] = 10;
+  } else if (warZone[i][j] == 10) {
+    printf("\nYou already hit this location\n");
   }
-  ContadorTiros++;
 
-  if (ContadorTiros == MAX_TIROS) {
+  printf("\n\nFires = %d", shotCounter);
+  printf("\n\nScore = %d", score);
+
+  if (shotCounter == maxShots) {
     return 2;
-  } else if (PontuacaoFinal == 50) {
+  } else if (score == 50) {
     return 1;
   }
   return 0;
 }
 
 int main() {
-  int situacao;
-  ZerarMatriz();
-  PosicionarNavios();
-  ImprimeMatrizTudo();
+  int situation;
+  resetMatrix();
+  positionShips();
+
+  printf("\n\nPlease input your name: ");
+  scanf("%s", name);
+
+  printf("\nHi %s, is time to make a BOOM!", name);
+
   do {
-    situacao = Tiro();
-  } while (situacao == 0);
-  if (situacao == 2) {
-    printf("\nSeus tiros acabaram e sua pontuacao final foi de %d\n",
-           PontuacaoFinal);
-  } else if (situacao == 1) {
-    printf("\nVoce destruiu todos os navios %d\n", PontuacaoFinal);
+    situation = Tiro();
+  } while (situation == 0);
+  if (situation == 2) {
+    printf("\n--------------------------------------------------------");
+    printf("\n--------------------------------------------------------");
+    printf("\n\n Game over!\n");
+    printf("\n--------------------------------------------------------");
+    printf("\n Player: %s", name);
+    printf("\n\nSeus tiros acabaram e sua pontuacao final foi de %d\n", score);
+    printMatrixAll();
+  } else if (situation == 1) {
+    printf("\n--------------------------------------------------------");
+    printf("\n--------------------------------------------------------");
+    printf("\n\n Game over!\n");
+    printf("\n--------------------------------------------------------");
+    printf("\n Player: %s", name);
+    printf("\n\nVoce destruiu todos os navios e sua pontuacao foi de %d\n",
+           score);
+    printMatrixAll();
   }
 
   return 0;
