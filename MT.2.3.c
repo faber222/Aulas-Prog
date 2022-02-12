@@ -1,9 +1,17 @@
+/*
+AUTHOR: FABER BERNARDO JUNIOR
+DATE: 12/02/2022
+PROGRAM SYNOPSIS: Make a naval battle
+ENTRY DATA: x, y
+OUTPUT DATA: map
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 #define maxSize 10
-#define maxShots 15
+#define maxShots 0
 #define maxName 30
 
 #define free 0
@@ -12,7 +20,7 @@
 #define submarine 3
 
 int warZone[maxSize][maxSize];
-int shotCounter = 0;
+int shotCounter = 30;
 int score = 0;
 char name[maxName];
 int x_chosen;
@@ -129,21 +137,21 @@ int Tiro() {
 
   if (warZone[i][j] == free) {
     printf("\nMiss, try again\n");
-    shotCounter++;
+    shotCounter--;
     warZone[i][j] = 10;
   } else if (warZone[i][j] == frigate) {
     printf("\nYou hit a frigate\n");
-    shotCounter++;
+    shotCounter--;
     score = score + 3;
     warZone[i][j] = 10;
   } else if (warZone[i][j] == submarine) {
     printf("\nYou hit a submarine\n");
-    shotCounter++;
+    shotCounter--;
     score = score + 5;
     warZone[i][j] = 10;
   } else if (warZone[i][j] == aircraftCarrier) {
     printf("\nYou hit a aircraft carrier\n");
-    shotCounter++;
+    shotCounter--;
     score = score + 10;
     warZone[i][j] = 10;
   } else if (warZone[i][j] == 10) {
@@ -166,10 +174,10 @@ int main() {
   resetMatrix();
   positionShips();
 
-  printf("\n\nPlease input your name: ");
+  printf("\n\n Please input your name: ");
   scanf("%s", name);
 
-  printf("\nHi %s, is time to make a BOOM!", name);
+  printf("\n Hi %s, is time to make a BOOM!", name);
 
   do {
     situation = Tiro();
@@ -180,7 +188,7 @@ int main() {
     printf("\n\n Game over!\n");
     printf("\n--------------------------------------------------------");
     printf("\n Player: %s", name);
-    printf("\n\nSeus tiros acabaram e sua pontuacao final foi de %d\n", score);
+    printf("\n\n Your shots are over and your final score is: %d\n", score);
     printMatrixAll();
   } else if (situation == 1) {
     printf("\n--------------------------------------------------------");
@@ -188,8 +196,7 @@ int main() {
     printf("\n\n Game over!\n");
     printf("\n--------------------------------------------------------");
     printf("\n Player: %s", name);
-    printf("\n\nVoce destruiu todos os navios e sua pontuacao foi de %d\n",
-           score);
+    printf("\n\n You destroyed all the ships and your score is: %d\n ", score);
     printMatrixAll();
   }
 
