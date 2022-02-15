@@ -1,66 +1,102 @@
+#include <conio.h>
+#include <locale.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+int number, imput = 0;
+char character[100];
+FILE *file;
+
+void write() {
+  file = fopen("faber.txt", "w");  // if not exist, will create
+  if (file != NULL)                // if anything is wrong, will alarm
+    printf("\nfaber.txt file was opened successfully\n");
+  else {
+    printf("\n\nError: The faber.txt file was not opened\n");
+    system("pause");
+    exit(0);
+  }
+  printf("How many items do you want to add?\n");
+  scanf("%d", &number);
+  for (int i = 1; i < number + 1; i++) {
+    printf("Item - %d\n", i);
+    scanf("%s", &character);  // scan the item for add in the file
+    fprintf(file, "%d - %s\n", i, character);  // print into the file
+  }
+  fclose(file);  // close the file
+};
+
+void read() {
+  file = fopen("faber.txt", "r");  // will open the file *.txt
+  if (file != NULL)                // if anything is wrong, will alarm
+    printf("\nfaber.txt file was opened successfully\n");
+  else {
+    printf("\n\nError: The faber.txt file was not opened\n");
+    system("pause");
+    exit(0);
+  }
+  char word[100];  // char to storage the word
+  while (fgets(word, 100, file) !=
+         NULL)  // fgets will capture the word to repeat while !n NULL
+  {
+    printf("%s", word);  // print the read word while looping
+  }
+  fclose(file);  // close the file
+};
+
+void alter() {
+  file = fopen("faber.txt", "a");  // will open the file *.txt
+  if (file != NULL)                // if anything is wrong, will alarm
+    printf("\nfaber.txt file was opened successfully\n");
+  else {
+    printf("\n\nError: The faber.txt file was not opened\n");
+    system("pause");
+    exit(0);
+  }
+  printf("How many items do you want to add?\n");
+  scanf("%d", &number);
+  for (int i = 1; i < number + 1; i++) {
+    printf("Item - %d\n", i);
+    scanf("%s", &character);  // scan the item for add in the file
+    fprintf(file, "\n%d - %s\n", i, character);  // print into the file
+  }
+  fclose(file);  // close the file
+};
 
 int main(void) {
-  int number, imput = 0;
-  char i[100];
-  FILE *file;
-
+  setlocale(LC_ALL, "pt_BR.URF-8");  // set language to pt-BR
   do {
-    printf("\nSelecione uma das opcoes abaixo");
-    printf("\n(1) para criar uma lista");
-    printf("\n(2) para ler uma lista ja existente");
-    printf("\n(3) para sair do programa\n");
-    scanf("%d", &imput);
+    printf("\nSelect one of the options below");
+    printf("\n(1) to create a list");
+    printf("\n(2) to read an existing list");
+    printf("\n(3) to edit an existing list");
+    printf("\n(4) to exit the program\n");
+    scanf("%d", &imput);  // scan the type valye
     switch (imput) {
-      case 1:
-        file = fopen("faber.txt", "w");
-
-        if (file != NULL)
-          printf("\nArquivo faber.txt foi aberto com sucesso\n");
-        else {
-          printf("\n\nErro: O arquivo faber.txt nao foi aberto\n");
-          system("pause");
-          exit(0);
-        }
-        printf("Quantos itens voce deseja adicionar?\n");
-        scanf("%d", &number);
-
-        for (int j = 1; j < number + 1; j++) {
-          printf("Item - %d\n", j);
-          scanf("%s", &i);
-
-          fprintf(file, "%d - %s\n", j, i);
-        }
-
-        fclose(file);
+      case 1:                              //
+        setlocale(LC_ALL, "pt_BR.URF-8");  // set language to pt-BR
+        write();                           // execute the function write
         break;
       case 2:
-        file = fopen("faber.txt", "r");
-
-        if (file != NULL)
-          printf("\nArquivo faber.txt foi aberto com sucesso\n");
-        else {
-          printf("\n\nErro: O arquivo faber.txt nao foi aberto\n");
-          system("pause");
-          exit(0);
-        }
-        char frase[100];
-        while (fgets(frase, 100, file) != NULL) {
-          printf("%s", frase);
-        }
-
-        fclose(file);
+        setlocale(LC_ALL, "pt_BR.URF-8");  // set language to pt-BR
+        read();                            // execute the function read
         break;
       case 3:
+        setlocale(LC_ALL, "pt_BR.URF-8");  // set language to pt-BR
+        alter();                           // execute the function alter
+        break;
+      case 4:
+        setlocale(LC_ALL, "pt_BR.URF-8");  // set language to pt-BR
         printf("\n\nFinish program!\n\n");
         return 0;
         break;
 
       default:
-        printf("Valor invalido\n");
+        printf("Invalid value\n");
         printf("Error!\n");
-        printf("Fechando lista\n ");
+        printf("Finish program!\n ");
         break;
     }
 
