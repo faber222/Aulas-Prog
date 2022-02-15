@@ -60,7 +60,7 @@ void alter() {
   for (int i = 1; i < number + 1; i++) {
     printf("Item - %d\n", i);
     scanf("%s", &character);  // scan the item for add in the file
-    fprintf(file, "\n%d - %s\n", i, character);  // print into the file
+    fprintf(file, "%d - %s\n", i, character);  // print into the file
   }
   fclose(file);  // close the file
 };
