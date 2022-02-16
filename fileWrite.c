@@ -6,8 +6,9 @@
 #include <string.h>
 
 int number, imput = 0;
-char character[100];
+char character[1000];
 FILE *file;
+FILE *file2;
 
 void write() {
   file = fopen("faber.txt", "w");  // if not exist, will create
@@ -65,6 +66,23 @@ void alter() {
   fclose(file);  // close the file
 };
 
+void copy() {
+  file = fopen("faber.txt", "r");
+  if (file != NULL) {  // if anything is wrong, will alarm
+    printf("\nfaber.txt file was opened successfully\n");
+  } else {
+    printf("\n\nError: The faber.txt file was not opened\n");
+    system("pause");
+    exit(0);
+  }
+  file2 = fopen("lucas.txt", "w");
+  while (fgets(character, 1000, file) != NULL) {
+    fputs(character, file2);
+  }
+  fclose(file);
+  fclose(file2);
+};
+
 int main(void) {
   setlocale(LC_ALL, "pt_BR.URF-8");  // set language to pt-BR
   do {
@@ -72,7 +90,8 @@ int main(void) {
     printf("\n(1) to create a list");
     printf("\n(2) to read an existing list");
     printf("\n(3) to edit an existing list");
-    printf("\n(4) to exit the program\n");
+    printf("\n(4) to copy an existing list");
+    printf("\n(5) to exit the program\n");
     scanf("%d", &imput);  // scan the type valye
     switch (imput) {
       case 1:                              //
@@ -88,6 +107,10 @@ int main(void) {
         alter();                           // execute the function alter
         break;
       case 4:
+        setlocale(LC_ALL, "pt_BR.UTF-8");
+        copy();
+        break;
+      case 5:
         setlocale(LC_ALL, "pt_BR.URF-8");  // set language to pt-BR
         printf("\n\nFinish program!\n\n");
         return 0;
@@ -100,7 +123,7 @@ int main(void) {
         break;
     }
 
-  } while (imput <= 3);
+  } while (imput <= 4);
 
   printf("\n");
   system("pause");
