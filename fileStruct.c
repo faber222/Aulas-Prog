@@ -10,7 +10,7 @@ struct horario {
   int minutos;
   int segundos;
   float teste;
-  char palavra;
+  char palavra[1000];
 };
 struct horario teste(struct horario x) {
   printf("%d:%d:%d\n", x.horas, x.minutos, x.segundos);
@@ -22,15 +22,16 @@ struct horario teste(struct horario x) {
 
 int main(void) {
   // struct horario teste(struct horario x);
-
   struct horario agora;
   agora.horas = 17;
   agora.minutos = 18;
   agora.segundos = 30;
   struct horario proxima;
+  scanf("%[^\n]s", agora.palavra);
   proxima = teste(agora);
 
   printf("%i:%i:%i\n", proxima.horas, proxima.minutos, proxima.segundos);
+  printf("%s\n", agora.palavra);
 
   system("pause");
   return 0;
