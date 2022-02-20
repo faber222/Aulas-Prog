@@ -1,12 +1,38 @@
+#include <conio.h>
 #include <locale.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+struct horario {
+  int horas;
+  int minutos;
+  int segundos;
+  float teste;
+  char palavra[1000];
+};
+struct horario teste(struct horario x) {
+  printf("%d:%d:%d\n", x.horas, x.minutos, x.segundos);
+  x.horas = 100;
+  x.minutos = 100;
+  x.segundos = 100;
+  return x;
+};
+
 int main(void) {
-  struct compras {
-    char item[100];
-    int amount;
-  } carrinho;
+  // struct horario teste(struct horario x);
+  struct horario agora;
+  agora.horas = 17;
+  agora.minutos = 18;
+  agora.segundos = 30;
+  struct horario proxima;
+  scanf("%[^\n]s", agora.palavra);
+  proxima = teste(agora);
+
+  printf("%i:%i:%i\n", proxima.horas, proxima.minutos, proxima.segundos);
+  printf("%s\n", agora.palavra);
+
+  system("pause");
+  return 0;
 }
