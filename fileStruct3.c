@@ -14,7 +14,7 @@ struct TCidadao {
   char cpf[20];
   struct TEndereco endereco;
   int num_filhos;
-};
+} Cidadao;
 
 void print_cidadao(struct TCidadao aux) {
   printf("Nome: %s - CPF: %s\n", aux.nome, aux.cpf);
@@ -23,8 +23,6 @@ void print_cidadao(struct TCidadao aux) {
 }
 
 int main(void) {
-  struct TCidadao Cidadao;
-
   printf("Entre com o nome\n");
   scanf("%[^\n]s", Cidadao.nome);
   getchar();
