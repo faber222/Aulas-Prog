@@ -10,6 +10,12 @@ char character[1000];
 FILE *file;
 FILE *file2;
 
+void flush_in() {  // clean the buffer
+  int ch;
+  while ((ch = fgetc(stdin)) != EOF && ch != '\n') {
+  }
+};
+
 void write() {
   file = fopen("faber.txt", "w");  // if not exist, will create
   if (file != NULL)                // if anything is wrong, will alarm
@@ -21,6 +27,7 @@ void write() {
   }
   printf("How many items do you want to add?\n");
   scanf("%d", &number);
+
   for (int i = 1; i < number + 1; i++) {
     printf("Item - %d\n", i);
     scanf("%s", &character);  // scan the item for add in the file

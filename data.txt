@@ -1,0 +1,5 @@
+Bartholomew                             Simpson                   10
+Homer               Jay                 Simpson                   36
+Lisa                                    Simpson                    8
+Marjorie                                Simpson                   34
+Margaret                                Simpson                    1
