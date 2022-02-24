@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int imput;
-
 struct fileWrite {
   char copyFile[100];
   char fileName[100];
@@ -15,10 +13,10 @@ struct fileWrite {
 struct listFile {
   int number;
   char character[100];
+  int amount;
 } list;
 
 FILE* mainFile;
-FILE* copiedFile;
 
 FILE* fileOpen(char* name, char* mode) {  // function for open the mainFile
   FILE* test = fopen(name, mode);
@@ -30,20 +28,26 @@ FILE* fileOpen(char* name, char* mode) {  // function for open the mainFile
   return test;
 };
 
-void write() {
-  printf("File to be created\n");
-  scanf("%s", fp.fileName);
-  mainFile = fileOpen(fp.fileName, "w");  // if not exist, will create
-
+void create() {
   printf("How many items do you want to add?\n");
   scanf("%d", &list.number);
 
   for (int i = 1; i < list.number + 1; i++) {
     printf("Item - %d\n", i);
     scanf("%s", list.character);  // scan the item for add in the mainFile
-    fprintf(mainFile, "%d - %s\n", i,
-            list.character);  // print into the mainFile
+    printf("Amount - %s\n", list.character);
+    scanf("%d", &list.amount);  // scan the item for add in the mainFile
+    fprintf(mainFile, "%d - %s - %d\n", i, list.character,
+            list.amount);  // print into the mainFile
   }
+};
+
+void write() {
+  printf("File to be created\n");
+  scanf("%s", fp.fileName);
+  mainFile = fileOpen(fp.fileName, "w");  // if not exist, will create
+
+  create();
   fclose(mainFile);  // close the mainFile
 };
 
@@ -67,20 +71,12 @@ void alter() {
   scanf("%s", fp.fileName);
   mainFile = fileOpen(fp.fileName, "a");  // will open the mainFile *.txt
 
-  printf("How many items do you want to add?\n");
-  scanf("%d", &list.number);
-
-  for (int i = 1; i < list.number + 1; i++) {
-    printf("Item - %d\n", i);
-    scanf("%s", list.character);  // scan the item for add in the mainFile
-    fprintf(mainFile, "%d - %s\n", i,
-            list.character);  // print into the mainFile
-  }
-
+  create();
   fclose(mainFile);  // close the mainFile
 };
 
 void copy() {
+  FILE* copiedFile;
   printf("File to be copy\n");
   scanf("%s", fp.fileName);
   mainFile = fileOpen(fp.fileName, "r");
@@ -99,6 +95,7 @@ void copy() {
 
 int main(void) {
   setlocale(LC_ALL, "pt_BR.UTF-8");  // set language to pt-BR
+  int imput;
   do {
     printf("\nSelect one of the options below");
     printf("\n(1) to create a list");

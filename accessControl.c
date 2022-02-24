@@ -47,7 +47,8 @@ void tratar_usuario() {
      estiver na tabela
    */
   for (i = 0; i < 4 && userEncontrado; i++) {
-    if (strcmp(userID, TabelaUsuarios[i].UserId) == 0) userEncontrado = 0;
+    if (strcmp(userID, TabelaUsuarios[i].UserId) == 0) 
+    userEncontrado = 0;
   }
 
   /* se usuário encontrado abre a porta */
