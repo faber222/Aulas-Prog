@@ -1,4 +1,8 @@
+#include <locale.h>
+#include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 struct TEndereco {
   char rua[50];
@@ -10,11 +14,9 @@ struct TCidadao {
   char cpf[20];
   struct TEndereco endereco;
   int num_filhos;
-};
+} Cidadao;
 
-struct TCidadao ler_struct() {
-  struct TCidadao aux;
-
+struct TCidadao ler_struct(struct TCidadao aux) {
   printf("Entre com o nome\n");
   scanf("%s", aux.nome);
 
@@ -39,9 +41,7 @@ void print_struct(struct TCidadao aux) {
 }
 
 void main() {
-  struct TCidadao Cidadao;
-
-  Cidadao = ler_struct();
+  Cidadao = ler_struct(Cidadao);
 
   print_struct(Cidadao);
 
