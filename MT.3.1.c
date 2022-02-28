@@ -1,3 +1,11 @@
+/*
+AUTOR: Faber Bernardo júnior
+DATA: 27/02/2022
+SINOPSE DO PROGRAMA: Set two pointer in the plane and compare with each other
+DADOS DE ENTRADA: x, y;
+DADOS DE SAIDA: distance, fistValue, secondValue;
+*/
+
 #include <math.h>
 #include <stdio.h>
 
