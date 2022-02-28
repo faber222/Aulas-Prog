@@ -10,12 +10,12 @@ DADOS DE SAIDA: distance, fistValue, secondValue;
 #include <stdio.h>
 
 typedef struct {
-  int x;
-  int y;
+  float x;
+  float y;
 } coordinate;
 
 float distanceCalc(coordinate pointer1, coordinate pointer2) {
-  int dx, dy;
+  float dx, dy;
   float dist, powX, powY;
 
   dx = pointer2.x - pointer1.x;
@@ -47,7 +47,8 @@ int quadrant(coordinate p) {
 }
 
 int main() {
-  int firstValue, secondValue, number;
+  int firstValue, secondValue;
+  int number;
   float distance;
   coordinate pointer1, pointer2;
 
@@ -57,13 +58,13 @@ int main() {
   for (int i = 0; i < number; i++) {
     printf("%dº time\n", i + 1);
     printf("Enter the value at first X \n");
-    scanf("%d", &pointer1.x);
+    scanf("%f", &pointer1.x);
     printf("Enter the value at first Y\n");
-    scanf("%d", &pointer1.y);
+    scanf("%f", &pointer1.y);
     printf("Enter the value at second X\n");
-    scanf("%d", &pointer2.x);
+    scanf("%f", &pointer2.x);
     printf("Enter the value at second Y\n");
-    scanf("%d", &pointer2.y);
+    scanf("%f", &pointer2.y);
 
     firstValue = quadrant(pointer1);
     secondValue = quadrant(pointer2);
