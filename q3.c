@@ -5,18 +5,16 @@ int alternar_chars(char str1[], char str2[], char str3[]) {
   int x, y, z, add = 0;
   x = strlen(str1);
   y = strlen(str2);
+  z = x + y;
   if (x == y) {
-    for (int i = 0; i < x; i++) {
-      if (str1[i] % 2 == 0) {
-        str3[i] = str1[i];
-      }
-      if (str2[i] % 2 != 0) {
-        str3[i] = str2[i];
+    for (int i = 0; i <= z; i++) {
+      if (i % 2 == 0) {
+        str3[i] = str1[add];
+      } else {
+        str3[i] = str2[add];
+        add++;
       }
     }
-    z = x + y;
-
-    printf("%s\n", str1);
   } else {
     return -1;
   }
