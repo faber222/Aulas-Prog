@@ -6,16 +6,17 @@ int main(int argc, char *argv[]) {
   int amount = 0;
   float x = 0, y = 0, z;
   int count = 0;
+
   for (int i = 1; argv[i] != '\0'; i++) {
     char *number;
     number = argv[i];
     z = atoi(number);
+
     if (z >= 0) {
       x = x + z;
       printf("number %f\n", z);
       count++;
     }
-    *number++;
   }
   y = x / count;
 
