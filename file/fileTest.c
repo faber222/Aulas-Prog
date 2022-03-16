@@ -1,25 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "person.h"
-
-/* write a struct to the file */
-void WritePersonFixedLength(struct person* input, FILE* target) {
-  // use fprintf to write input->firstname '%-20s'
-  fprintf(target, "%-20s", input->firstname);
-
-  // use fprintf to write input->middlename '%-20s'
-  fprintf(target, "%-20s", input->middlename);
-  // use fprintf to write input->lastname '%-20s'
-  fprintf(target, "%-20s", input->lastname);
-  // use fprintf to write input->age '%8d'
-  fprintf(target, "%8d", input->age);
-
-  /* add a newline to the file so that it is a whole lot more readable,
-   we need to remember to skip this when we read it out			*/
-  fprintf(target, "\n");
-}
 
 int main() {
   struct person person1, person2, person3, person4, person5;
