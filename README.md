@@ -1,33 +1,33 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Aulas-Prog" />
+  <img src="./.github/app.gif" alt="Prog-Class" />
 
   &#xa0;
 
   <!-- <a href="https://aulasprog.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Aulas-Prog</h1>
+<h1 align="center">Prog-Class</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/Aulas-Prog?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/faber222/Prog-Class?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/Aulas-Prog?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/faber222/Prog-Class?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/Aulas-Prog?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/faber222/Prog-Class?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/faber222/Aulas-Prog?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/faber222/Prog-Class?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/Aulas-Prog?color=56BEB8" /> 
+  <img alt="Github issues" src="https://img.shields.io/github/issues/faber222/Prog-Class?color=56BEB8" /> 
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/Aulas-Prog?color=56BEB8" /> 
+  <img alt="Github forks" src="https://img.shields.io/github/forks/faber222/Prog-Class?color=56BEB8" /> 
 
-  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/Aulas-Prog?color=56BEB8" /> 
+  <img alt="Github stars" src="https://img.shields.io/github/stars/faber222/Prog-Class?color=56BEB8" /> 
 </p>
 
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  Aulas-Prog 🚀 Under construction...  🚧
+	🚧  Prog-Class 🚀 Under construction...  🚧
 </h4> 
 
 <hr> 
@@ -75,10 +75,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/faber222/Aulas-Prog
+$ git clone https://github.com/faber222/Prog-Class
 
 # Access
-$ cd Aulas-Prog
+$ cd Prog-Class
 $ git switch windows
 $ git pull
 
