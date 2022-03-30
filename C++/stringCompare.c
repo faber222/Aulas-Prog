@@ -13,11 +13,12 @@ typedef struct {
 int main(void) {
   int bar1, bar2, bar3;
   int ter1, ter2, ter3;
-  barometro bar;
-  termometro ter;
   char a[NUM] = "subindo";
   char b[NUM] = "estacionario";
   char c[NUM] = "baixando";
+
+  barometro bar;
+  termometro ter;
 
   printf("o barometro esta em qual posicao?\n");
   scanf("%s", bar.dados);
@@ -38,6 +39,7 @@ int main(void) {
   } else if (bar1 == 0 && ter3 == 0) {
     printf("Tempo bom, ventos de sul e sudoeste\n");
   };
+
   if (bar2 == 0 && ter1 == 0) {
     printf("Tempo mudando para bom, ventos de leste\n");
   } else if (bar2 == 0 && ter2 == 0) {
@@ -45,6 +47,7 @@ int main(void) {
   } else if (bar2 == 0 && ter3 == 0) {
     printf("chuva provavel, ventos de sul e sudeste\n");
   };
+
   if (bar3 == 0 && ter1 == 0) {
     printf("Tempo instavel, aproximacao de frente\n");
   } else if (bar3 == 0 && ter2 == 0) {

@@ -23,5 +23,8 @@ int main() {
     vet2[i] = vet1[i] * 5;
   }
   /* para conferir- vamos imprimir o conteúdo de vet2 */
-  for (i = 0; i < 6; i++) printf("vet2[%d] => %d\n", i, vet2[i]);
+  for (int j = 0; j < 6; j++) {
+    printf("vet2[%d] => %d\n", j, vet2[j]);
+  }
+  return 0;
 }
