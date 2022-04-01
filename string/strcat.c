@@ -12,4 +12,3 @@ int main() {
   printf("%s\n", x);
   return 0;
 }
-
