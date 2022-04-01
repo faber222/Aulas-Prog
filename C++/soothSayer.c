@@ -34,6 +34,7 @@ int guess(int i, int j) {
   }
 }
 int main() {
+  system("cls");
   char pensamento;
   printf("Pense em um numero entre 0 e 100.\n");
   printf("Pensou?(S = Sim, N = nao)\n");

@@ -1,21 +1,28 @@
-#include <ctype.h>
-
+#include <cctype>
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int main(void) {
-  string palavra[] = "FABER     BERNARDO           JUNIOR               ";
-  int m = 0;
+int main() {
+  string palavra;
+  string palavraFinal;
+  getline(cin, palavra);
+  int m = 1;
+  int f = isspace(palavra[0]);
 
-  for (int i = 1; i < strlen(palavra); i++) {
-    int x = isspace(palavra[m]);
-    int z = isspace(palavra[i]);
+  if (f == 0) {
+    cout << ' ';
+  }
+
+  for (int i = 0; i < palavra.size(); i++) {
+    int x = isspace(palavra[i]);
+    int z = isspace(palavra[m]);
 
     if (x == 0 || z == 0) {
-      cout << palavra[i];
+      palavraFinal = palavraFinal + palavra[i];
     }
     m++;
   }
+  cout << palavraFinal;
 }

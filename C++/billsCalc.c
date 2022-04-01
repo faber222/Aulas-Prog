@@ -72,42 +72,42 @@ int main(void) {
         troco = troco - 50;
       }
 
-      if ((troco >= (1*100)) && (troco < (2*100))) {
+      if ((troco >= (1 * 100)) && (troco < (2 * 100))) {
         reais.um = reais.um + 1;
-        troco = troco - (1*100);
+        troco = troco - (1 * 100);
       }
-      if ((troco >= (2*100)) && (troco < (5*100))) {
+      if ((troco >= (2 * 100)) && (troco < (5 * 100))) {
         reais.dois = reais.dois + 1;
-        troco = troco - (2*100);
+        troco = troco - (2 * 100);
       }
-      if ((troco >= (5*100)) && (troco < (10*100))) {
+      if ((troco >= (5 * 100)) && (troco < (10 * 100))) {
         reais.cinco = reais.cinco + 1;
-        troco = troco - (5*100);
+        troco = troco - (5 * 100);
       }
-      if ((troco >= (10*100)) && (troco < (20*100))) {
+      if ((troco >= (10 * 100)) && (troco < (20 * 100))) {
         reais.dez = reais.dez + 1;
-        troco = troco - (10*100);
+        troco = troco - (10 * 100);
       }
-      if ((troco >= (20*100)) && (troco < (50*100))) {
+      if ((troco >= (20 * 100)) && (troco < (50 * 100))) {
         reais.vinte = reais.vinte + 1;
-        troco = troco - (20*100);
+        troco = troco - (20 * 100);
       }
-      if ((troco >= (50*100)) && (troco < (100*100))) {
+      if ((troco >= (50 * 100)) && (troco < (100 * 100))) {
         reais.cinquenta = reais.cinquenta + 1;
-        troco = troco - (50*100);
+        troco = troco - (50 * 100);
       }
-      if (troco >= (100*100)) {
+      if (troco >= (100 * 100)) {
         reais.cem = reais.cem + 1;
-        troco = troco - (100*100);
+        troco = troco - (100 * 100);
       }
     }
 
     printf("+-----------------------------------------------+\n");
     printf("|                     TROCO                     |\n");
     printf("|                                               |\n");
-    printf("| VALOR DA COMPRA: %-29lf|\n", compra/100);
-    printf("| VALOR RECEBIDO: %-30lf|\n", recebido/100);
-    printf("| VALOR DO TROCO: %-30lf|\n", lembratroco/100);
+    printf("| VALOR DA COMPRA: %-29lf|\n", compra / 100);
+    printf("| VALOR RECEBIDO: %-30lf|\n", recebido / 100);
+    printf("| VALOR DO TROCO: %-30lf|\n", lembratroco / 100);
     printf("+-----------------------------------------------+\n");
     printf("|           CEDULAS A SEREM ENTREGUES           |\n");
     printf("|                                               |\n");
