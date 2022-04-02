@@ -8,22 +8,22 @@ using namespace std;
 int x = 1;
 
 int guess(int i, int j) {
-  string resposta1;
+  string z;
 
   int g = abs((i + j) / 2);
 
   cout << g << endl;
-  cin >> resposta1;
+  cin >> z;
 
-  if (resposta1 == "=") {
-    cout << x << " tentativas" << endl;
+  if (z == "=") {
+    cout << x << " attempts" << endl;
   }
-  if (resposta1 == ">") {
-    x = x + 1;
+  if (z == ">") {
+    x++;
     guess(g, j);
   }
-  if (resposta1 == "<") {
-    x = x + 1;
+  if (z == "<") {
+    x++;
     guess(i, g);
   }
 }

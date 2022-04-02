@@ -20,9 +20,9 @@ int main(void) {
   barometer bar;
   thermometer ter;
 
-  printf("What position is the barometer in?\n");
+  printf("What position is the barometer in? (rise, stationary or lower)\n");
   scanf("%s", bar.data);
-  printf("What is the thermometer in??\n");
+  printf("What is the thermometer in? (rise, stationary or lower)\n");
   scanf("%s", ter.value);
 
   bar1 = strcmp(bar.data, a);   // barometer rise
@@ -33,26 +33,26 @@ int main(void) {
   ter3 = strcmp(ter.value, c);  // thermometer lower
 
   if (bar1 == 0 && ter1 == 0) {
-    printf("Good weather, hot, dry winds\n");
+    printf("Good weather, warm and dry winds\n");
   } else if (bar1 == 0 && ter2 == 0) {
     printf("Good weather, fresh east winds\n");
   } else if (bar1 == 0 && ter3 == 0) {
-    printf("Good weather, south and southwest winds\n");
+    printf("Good weather, south to southwest winds\n");
   };
 
   if (bar2 == 0 && ter1 == 0) {
     printf("The weather is getting better, east winds\n");
   } else if (bar2 == 0 && ter2 == 0) {
-    printf("Tempo incerto, ventos variaveis\n");
+    printf("Uncertain weather, variable winds\n");
   } else if (bar2 == 0 && ter3 == 0) {
-    printf("chuva provavel, ventos de sul e sudeste\n");
+    printf("Probable rain, south to southeast winds\n");
   };
 
   if (bar3 == 0 && ter1 == 0) {
-    printf("Tempo instavel, aproximacao de frente\n");
+    printf("Unstable weather, frontal approach\n");
   } else if (bar3 == 0 && ter2 == 0) {
-    printf("Frente quente com chuvas provaveis\n");
+    printf("Warm front with probable rains\n");
   } else if (bar3 == 0 && ter3 == 0) {
-    printf("Chuvas abundantes e ventos de sul a sudoeste fortes\n");
+    printf("Plenty of rain and strong south-southwest winds\n");
   };
 };

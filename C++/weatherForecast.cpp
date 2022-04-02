@@ -7,37 +7,37 @@ int main(void) {
   string data;
   string value;
 
-  cout << "Barometro:";
+  cout << "Barometer:(rise, stationary or lower)";
   cin >> data;
 
-  cout << "Termometro:";
+  cout << "Thermometer:(rise, stationary or lower)";
   cin >> value;
 
-  if (data == "subindo" && value == "subindo") {
-    cout << "Tempo bom, ventos quentes e secos" << endl;
+  if (data == "rise" && value == "rise") {
+    cout << "Good weather, warm and dry winds" << endl;
   }
-  if (data == "subindo" && value == "estacionario") {
-    cout << "Tempo bom, ventos de leste frescos" << endl;
+  if (data == "rise" && value == "stationary") {
+    cout << "Good weather, fresh east winds" << endl;
   }
-  if (data == "subindo" && value == "baixando") {
-    cout << "Tempo bom, ventos de sul a sudeste" << endl;
+  if (data == "rise" && value == "lower") {
+    cout << "Good weather, south to southwest winds" << endl;
   }
-  if (data == "estacionario" && value == "subindo") {
-    cout << "Tempo mudando para bom, ventos de leste" << endl;
+  if (data == "stationary" && value == "rise") {
+    cout << "The weather is getting better, east winds" << endl;
   }
-  if (data == "estacionario" && value == "estacionario") {
-    cout << "Tempo incerto, ventos variaveis" << endl;
+  if (data == "stationary" && value == "stationary") {
+    cout << "Uncertain weather, variable winds" << endl;
   }
-  if (data == "estacionario" && value == "baixando") {
-    cout << "Chuva provavel, ventos de sul a sudeste" << endl;
+  if (data == "stationary" && value == "lower") {
+    cout << "Probable rain, south to southeast winds" << endl;
   }
-  if (data == "baixando" && value == "subindo") {
-    cout << "Tempo instavel, aproximacao de frente" << endl;
+  if (data == "lower" && value == "rise") {
+    cout << "Unstable weather, frontal approach" << endl;
   }
-  if (data == "baixando" && value == "estacionario") {
-    cout << "Frente quente, com chuvas provaveis" << endl;
+  if (data == "lower" && value == "stationary") {
+    cout << "Warm front with probable rains" << endl;
   }
-  if (data == "baixando" && value == "baixando") {
-    cout << "Chuvas abundantes e ventos de sul a sudeste fortes" << endl;
+  if (data == "lower" && value == "lower") {
+    cout << "Plenty of rain and strong south-southwest winds" << endl;
   }
 };

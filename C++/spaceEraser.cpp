@@ -4,25 +4,25 @@
 
 using namespace std;
 
-int main() {
-  string palavra;
-  string palavraFinal;
-  getline(cin, palavra);
-  int m = 1;
-  int f = isspace(palavra[0]);
+int main(int argc, char *argv[]) {
+  for (int j = 1; j < argc; j++) {
+    string word = argv[j];
 
-  if (f == 0) {
-    cout << ' ';
-  }
+    int m = 1;
+    int f = isspace(word[0]);
 
-  for (int i = 0; i < palavra.size(); i++) {
-    int x = isspace(palavra[i]);
-    int z = isspace(palavra[m]);
-
-    if (x == 0 || z == 0) {
-      palavraFinal = palavraFinal + palavra[i];
+    if (f == 0) {
+      cout << ' ';
     }
-    m++;
+
+    for (int i = 0; i < word.size(); i++) {
+      int x = isspace(word[i]);
+      int z = isspace(word[m]);
+
+      if (x == 0 || z == 0) {
+        cout << word[i];
+      }
+      m++;
+    }
   }
-  cout << palavraFinal;
 }
