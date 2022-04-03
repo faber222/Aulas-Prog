@@ -16,12 +16,12 @@ int main(void) {
 
   double purchase, received, moneyChange, storage;
 
-  system("cls");
+  system("cls");  // only work in windows OS
   printf("Purchase value: ");
   scanf("%lf", &purchase);
   printf("Received value: ");
   scanf("%lf", &received);
-  system("cls");
+  system("cls");  // only work in windows OS
 
   if (purchase < received) {
     purchase = purchase * 100;
@@ -30,7 +30,6 @@ int main(void) {
     moneyChange = received - purchase;
     storage = moneyChange;
 
-    // CONTADOR DE DINHEIRO
     real.hundred = 0;
     real.fifty = 0;
     real.twenty = 0;
@@ -47,52 +46,52 @@ int main(void) {
 
     while (moneyChange > 0) {
       if ((moneyChange >= 1) && (moneyChange < 5)) {
-        cents.one = cents.one + 1;
+        cents.one++;
         moneyChange = moneyChange - 1;
       }
       if ((moneyChange >= 5) && (moneyChange < 10)) {
-        cents.five = cents.five + 1;
+        cents.five++;
         moneyChange = moneyChange - 5;
       }
       if ((moneyChange >= 10) && (moneyChange < 25)) {
-        cents.ten = cents.ten + 1;
+        cents.ten++;
         moneyChange = moneyChange - 10;
       }
       if ((moneyChange >= 25) && (moneyChange < 50)) {
-        cents.twentyFive = cents.twentyFive + 1;
+        cents.twentyFive++;
         moneyChange = moneyChange - 25;
       }
       if ((moneyChange >= 50) && (moneyChange < 100)) {
-        cents.fifty = cents.fifty + 1;
+        cents.fifty++;
         moneyChange = moneyChange - 50;
       }
 
       if ((moneyChange >= (1 * 100)) && (moneyChange < (2 * 100))) {
-        real.one = real.one + 1;
+        real.one++;
         moneyChange = moneyChange - (1 * 100);
       }
       if ((moneyChange >= (2 * 100)) && (moneyChange < (5 * 100))) {
-        real.two = real.two + 1;
+        real.two++;
         moneyChange = moneyChange - (2 * 100);
       }
       if ((moneyChange >= (5 * 100)) && (moneyChange < (10 * 100))) {
-        real.five = real.five + 1;
+        real.five++;
         moneyChange = moneyChange - (5 * 100);
       }
       if ((moneyChange >= (10 * 100)) && (moneyChange < (20 * 100))) {
-        real.ten = real.ten + 1;
+        real.ten++;
         moneyChange = moneyChange - (10 * 100);
       }
       if ((moneyChange >= (20 * 100)) && (moneyChange < (50 * 100))) {
-        real.twenty = real.twenty + 1;
+        real.twenty++;
         moneyChange = moneyChange - (20 * 100);
       }
       if ((moneyChange >= (50 * 100)) && (moneyChange < (100 * 100))) {
-        real.fifty = real.fifty + 1;
+        real.fifty++;
         moneyChange = moneyChange - (50 * 100);
       }
       if (moneyChange >= (100 * 100)) {
-        real.hundred = real.hundred + 1;
+        real.hundred++;
         moneyChange = moneyChange - (100 * 100);
       }
     }

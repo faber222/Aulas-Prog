@@ -6,8 +6,8 @@ using namespace std;
 int main(int argc, char *argv[]) {
   string s;
 
-  cout << "Digite uma palavra: ";
-  cin >> s;
+  cout << "Type a phrase or a word: ";
+  getline(cin, s);
 
   int p1, p2;
   for (p1 = 0, p2 = s.size() - 1; p1 < p2; p1++, p2--) {

@@ -9,7 +9,6 @@ int x = 1;
 
 int guess(int i, int j) {
   string z;
-
   int g = abs((i + j) / 2);
 
   cout << g << endl;

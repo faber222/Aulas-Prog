@@ -1,45 +1,42 @@
 #include <math.h>
 #include <stdio.h>
-#include <string.h>
-#define NUM 10
+
+int x = 1;
 
 int guess(int i, int j) {
-  char resposta1[NUM], resposta2[NUM];
-  char comp1[NUM] = "Sim";
-  char comp2[NUM] = "Maior";
-  char comp3[NUM] = "Menor";
+  char answer1, answer2;
 
-  int x, y, z;
   int g = abs((i + j) / 2);
 
-  printf("E o numero: %d ?(Sim, Nao)\n", g);
-  scanf("%s", resposta1);
+  printf("Is the number: %d ?(Y, N)\n", g);
+  scanf(" %c", &answer1);
 
-  x = strcmp(resposta1, comp1);
-
-  if (x == 0) {
+  if (answer1 == 'Y') {
+    printf("%d attempts\n", x);
     return g;
   } else {
-    printf("O numero eh maior ou menor que %d ?(Maior, Menor)\n", g);
-    scanf("%s", resposta2);
-    y = strcmp(resposta2, comp2);
-    z = strcmp(resposta2, comp3);
+    printf("Is the number bigger or smaller %d ?(>, <)\n", g);
+    scanf(" %c", &answer2);
 
-    if (y == 0) {
+    if (answer2 == '>') {
+      x++;
       guess(g, j);
     }
-    if (z == 0) {
+    if (answer2 == '<') {
+      x++;
       guess(i, g);
     }
   }
 }
+
 int main() {
   system("cls");
-  char pensamento;
-  printf("Pense em um numero entre 0 e 100.\n");
-  printf("Pensou?(S = Sim, N = nao)\n");
-  scanf(" %c", &pensamento);
-  if (pensamento == 'S') {
+  char thought;
+
+  printf("Think of a number between 0 and 100.\n");
+  printf("Did you think about the number?(Y, N)\n");
+  scanf(" %c", &thought);
+  if (thought == 'Y') {
     guess(1, 100);
   }
 }

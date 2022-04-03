@@ -15,4 +15,5 @@ int main(void) {
     }
     m++;
   }
+  printf("\n");
 }
