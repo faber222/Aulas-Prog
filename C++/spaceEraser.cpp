@@ -8,9 +8,7 @@ int main(int argc, char *argv[]) {
     string word = argv[j];
     int m = 1;
 
-    if (word[0] != ' ') {
-      cout << ' ';
-    }
+    cout << ' ';
 
     for (int i = 0; i < word.size(); i++) {
       if (word[i] != ' ' || word[m] != ' ') {
@@ -19,5 +17,4 @@ int main(int argc, char *argv[]) {
       m++;
     }
   }
-  cout << endl;
 }
