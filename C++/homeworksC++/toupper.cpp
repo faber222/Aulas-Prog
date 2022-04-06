@@ -9,7 +9,7 @@ int main() {
   getline(cin, str);
 
   for (auto& j : str) {
-    char c = toupper(j);
-    cout << c;
+    j = toupper(j);
+    cout << j;
   }
 }
