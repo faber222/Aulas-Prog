@@ -1,3 +1,5 @@
+#include <ctype.h>
+
 #include <cctype>
 #include <iostream>
 #include <string>
@@ -8,15 +10,16 @@ int main() {
   string word;
   getline(cin, word);
   int i = word.size();
-  int y = 1;
-  for (auto& f : word) {
-    if (f == ' ' && isalpha(f + 1)) {
-      y++;
+  int x = 1;
+  int m = 1;
+  for (auto& j : word) {
+    if (j == ' ' && isalpha(word[m])) {
+      x++;
     }
+    m++;
   }
   if (i == 0) {
-    y = 0;
+    x = 0;
   }
-
-  cout << y << ' ' << i;
+  cout << x << ' ' << i;
 }
