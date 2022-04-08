@@ -1,25 +1,23 @@
-#include <cctype>
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 int main() {
-  system("cls");
-  string word;
-  getline(cin, word);
-  int i = word.size();
-  int x = 1;
-  int m = 0;
-  for (auto& j : word) {
-    if (j == ' ' && isalpha(word[m - 1]) && isalpha(word[m + 1])) {
-      x++;
-    }
+  cout << "\x1b[2J";
+  cout << "\x1b[H";
+  string frase;
+  bool space = true;
+  getline(cin, frase);
 
-    m++;
+  int x = 0;
+  int y = 0;
+
+  while (x != string::npos) {
+    int z = frase.find_first_not_of(" \n\t.?:!;,", x);
+    if (z == string::npos) break;
+    y++;
+    x = frase.find_first_of(" \n\t.?:!;,", z);
   }
-  if (i == 0) {
-    x = 0;
-  }
-  cout << x << ' ' << i;
+  cout << y << ' ' << frase.size() << endl;
 }
