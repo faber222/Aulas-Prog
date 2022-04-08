@@ -1,3 +1,6 @@
+#include <errno.h>
+#include <stdio.h>
+
 #include <fstream>
 #include <iostream>
 
@@ -13,9 +16,10 @@ int main() {
   cin >> arquivo;
   ofstream arq(arquivo);  // acesso a arquivos em modo escrita
 
-  if (not arq.is_open()) {
+  if (!arq.is_open()) {
     cerr << "Algum erro ao abrir o arquivo ..." << endl;
-    return 0;
+    perror("erro");
+    return errno;
   }
 
   // cout: saída padrão
@@ -40,7 +44,12 @@ int main() {
   while (getline(arq2, linha)) {  // le linha por linha
     cout << linha << endl;
   }
-  while (arq2 >> palavra) {  // le palavra por palavra
-    cout << palavra << endl;
+  // arquivo por ser um stream, ele finaliza a leitura quando uso o arq2 de
+  // leitura de linha por linha
+  arq2.clear();
+  arq2.seekg(0);
+
+  while (arq2 >> linha) {  // le palavra por palavra
+    cout << linha << endl;
   }
 }

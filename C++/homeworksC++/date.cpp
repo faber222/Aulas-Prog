@@ -38,6 +38,7 @@ int main(int argc, char* argv[]) {
     dd = stoi(x);
     mm = stoi(y);
     yy = stoi(z);
+    
     if (yy >= 0001 && yy <= 9999) {
       if (mm >= 1 && mm <= 12) {
         if ((dd >= 1 && dd <= 31) &&

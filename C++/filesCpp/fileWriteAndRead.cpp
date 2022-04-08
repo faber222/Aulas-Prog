@@ -10,7 +10,7 @@ int main() {
   cin >> x;
   fstream arq(x);  // abertura de arquivos em modo leitura e escrita
 
-  if (not arq.is_open()) {
+  if (!arq.is_open()) {
     cerr << "Algum erro ao abrir o arquivo ..." << endl;
     return 0;
   }
@@ -22,7 +22,7 @@ int main() {
 
   arq.seekg(0);
 
-  while (not arq.eof()) {
+  while (!arq.eof()) {
     char linha[MAX_LINE];
 
     arq.getline(linha, MAX_LINE);
