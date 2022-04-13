@@ -15,6 +15,7 @@ int main() {
   string palavra;
   cin >> arquivo;
   ofstream arq(arquivo);  // acesso a arquivos em modo escrita
+  int x = 0;
 
   if (!arq.is_open()) {
     cerr << "Algum erro ao abrir o arquivo ..." << endl;
@@ -43,6 +44,7 @@ int main() {
 
   while (getline(arq2, linha)) {  // le linha por linha
     cout << linha << endl;
+    x++;
   }
   // arquivo por ser um stream, ele finaliza a leitura quando uso o arq2 de
   // leitura de linha por linha
@@ -52,4 +54,5 @@ int main() {
   while (arq2 >> linha) {  // le palavra por palavra
     cout << linha << endl;
   }
+  cout << x << endl;
 }
