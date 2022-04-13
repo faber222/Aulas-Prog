@@ -3,23 +3,25 @@
 
 using namespace std;
 
-int main() {
-  cout << "\x1b[2J";
-  cout << "\x1b[H";
+string normaliza(string character) {
+  string teste, nome;
+
+  int x = character.size();
+  int z;
+
+  z = character.find_last_of(" \n\t.?:!;,", x);
+  if (z == string::npos) {
+    return teste;
+  }
+
+  teste = character.substr(z + 1);
+  nome = character.substr(0, z);
+
+  cout << teste << ", " << nome << endl;
+}
+
+int main(void) {
   string frase;
   getline(cin, frase);
-  string teste;
-
-  int x = 0;
-
-  while (x != string::npos) {
-    int z = frase.find_last_of(" \n\t.?:!;,", x);
-    if (z == string::npos) break;
-    cout << z << endl;
-    teste = frase.substr(z);
-    cout << teste << endl;
-
-    x = frase.find_last_not_of(" \n\t.?:!;,", z);
-  }
-  cout << endl;
+  normaliza(frase);
 }
