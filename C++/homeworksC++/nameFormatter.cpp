@@ -3,28 +3,28 @@
 
 using namespace std;
 
-string normaliza(string character) {
-  string teste, nome, palavras;
+string normaliza(string nome) {
+  string teste, str, palavras;
 
-  int x = character.size();
+  int x = nome.size();
   int z;
 
-  z = character.find_last_of(" \n\t.?:!;,", x);
+  z = nome.find_last_of(" \n\t.?:!;,", x);
   if (z == string::npos) {
     teste.erase();
     return teste;
   }
 
-  teste = character.substr(z + 1);
-  nome = character.substr(0, z);
+  teste = nome.substr(z + 1);
+  str = nome.substr(0, z);
 
   palavras += teste;
   palavras += ", ";
-  palavras += nome;
+  palavras += str;
   return palavras;
 }
 
-int main(void) {
+int main() {
   string frase, retorno;
   getline(cin, frase);
   retorno = normaliza(frase);

@@ -10,7 +10,8 @@ int main(int argc, char* argv[]) {
 
   string s;
   while (getline(inp, s)) {
-    for (int j = 0; j < s.size(); j++) s[j] = toupper(s[j]);
+    // for (int j = 0; j < s.size(); j++)
+    //  s[j] = toupper(s[j]);
 
     out << s << endl;
   }
