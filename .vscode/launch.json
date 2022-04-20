@@ -33,13 +33,13 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "/home/faber222/Documents/faber/Prog-Class",
+      "cwd": "/home/aluno/faber/Prog-Class",
       "environment": [],
-      "program": "/home/faber222/Documents/faber/Prog-Class/build/Debug/outDebug",
+      "program": "/home/aluno/faber/Prog-Class/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
-      "externalConsole": false,
+      "console": "integratedTerminal",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

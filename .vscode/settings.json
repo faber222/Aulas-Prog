@@ -47,7 +47,7 @@
     "typeinfo": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
-  "C_Cpp_Runner.cCompilerPath": "gcc",
+  "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/g++",
   "C_Cpp_Runner.debuggerPath": "gdb",
   "C_Cpp_Runner.cStandard": "gnu17",

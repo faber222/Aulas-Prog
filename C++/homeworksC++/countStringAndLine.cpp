@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     int z = palavra.find_first_not_of(" \n\t.?:!;,", x);
     if (z == string::npos) break;
     y++;
-    x = palavra.find_first_of(" \n\t.?:!;,", z);
+    x = palavra.find_first_of(" \n\t.?:!;,", z - x);
   }
-  cout << w << ' ' << y << ' ' << palavra.size() - 1 << endl;
+  cout << w << ' ' << y << ' ' << palavra.size() << endl;
 }
