@@ -1,4 +1,3 @@
-#include <cstring>
 #include <iostream>
 #include <queue>
 #include <stack>
@@ -28,14 +27,18 @@ string reduz_caminho(const string& caminho) {
   string z = "";
   string memoria, palavra;
 
-  if (caminho == "") {
+  if (caminho.size() == 0) {
     return z;
   }
 
   separa(caminho, separador, q1);
+
   while (!q1.empty()) {
     memoria = q1.front();
     q1.pop();
+    if (memoria.size() == 0) {
+      return separador;
+    }
 
     if (memoria != ".." && memoria != ".") {
       p1.push(memoria);
@@ -50,13 +53,18 @@ string reduz_caminho(const string& caminho) {
     p2.push(p1.top());
     p1.pop();
   }
+
   while (!p2.empty()) {
     palavra += '/';
     palavra += p2.top();
     p2.pop();
   }
 
-  return separador;
+  if (palavra != z) {
+    return palavra;
+  } else {
+    return separador;
+  }
 }
 
 int main() {
