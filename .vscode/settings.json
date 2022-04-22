@@ -44,7 +44,10 @@
     "sstream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
