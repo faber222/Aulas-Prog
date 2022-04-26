@@ -47,7 +47,8 @@
     "typeinfo": "cpp",
     "list": "cpp",
     "map": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "cstring": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
