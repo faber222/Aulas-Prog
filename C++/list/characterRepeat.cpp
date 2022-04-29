@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
   while (arq >> palavra) {
     lista.push_back(palavra);
   }
-
+/*
   for (auto it = lista.begin(); it != lista.end(); it++) {
     for (auto t = it; t != lista.end(); t++) {
       if (*t == *it) {
@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
       }
     }
   }
+  */
 
   while (!lista2.empty()) {
     cout << lista2.front() << endl;
