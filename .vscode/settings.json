@@ -48,7 +48,8 @@
     "list": "cpp",
     "map": "cpp",
     "stack": "cpp",
-    "cstring": "cpp"
+    "cstring": "cpp",
+    "string_view": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",

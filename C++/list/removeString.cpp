@@ -4,29 +4,26 @@
 
 using namespace std;
 
-list<string> separa(const string& input, const string& stringSeparator) {
-  int space = 0;
-  list<string> line;
-  string aux;
+list<string> separa(const string& texto, auto sep) {
+  list<string> q;
+  int x = 0;
+  string memoria;
 
-  while (space != string::npos) {
-    int word = input.find_first_not_of(stringSeparator, space);
-    if (word == string::npos) break;
-    space = input.find(stringSeparator, word);
-    if (space == string::npos) {
-      aux = input.substr(word);
-    } else {
-      aux = input.substr(word, space - word);
-    }
-    line.push_back(aux);
+  while (x != string::npos) {
+    int z = texto.find_first_not_of(sep, x);
+    if (z == string::npos) break;
+    x = texto.find(sep, z);
+    memoria = texto.substr(z, x - z);
+    q.push_back(memoria);
   }
-  return line;
+  return q;
 }
 
 int main(int argc, char* argv[]) {
   ifstream arq(argv[1]);
-  string aux, separatorString;
-  separatorString = argv[2];
+  string aux;
+  string c = argv[2];
+  auto separatorString = c;
   list<string> output;
 
   while (getline(arq, aux)) {
