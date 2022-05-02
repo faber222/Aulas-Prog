@@ -7,10 +7,10 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
   ifstream arq(argv[1]);
-  list<int> lista;
+  list<float> lista;
   float media = 0;
   float porcentagem = 0;
-  int soma = 0, x = 0, n;
+  float soma = 0, x = 0, n;
 
   while (arq >> n) {
     lista.push_back(n);
