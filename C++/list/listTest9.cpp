@@ -27,6 +27,7 @@ bool operator<(const Alguem& este, const Alguem& outro) {
 int main() {
   list<Alguem> l;
 
+  // struct diferente
   Alguem joao("Joao", 20);
   l.push_back(joao);
 
@@ -36,8 +37,9 @@ int main() {
   Alguem x2("Gabriel", 19);
   l.push_back(x2);
 
-  l.push_back(Alguem("Isadora", 18));
-  l.push_back(Alguem("Gustavo", 18));
+  // mesma struct
+  l.push_back(Alguem faber("Isadora", 18));
+  l.push_back(Alguem lucas("Gustavo", 18));
 
   // ordena a lista
   l.sort();

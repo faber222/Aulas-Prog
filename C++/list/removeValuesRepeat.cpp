@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void mostra(const list<int>& l) {
+void mostra(const list<string>& l) {
   for (auto& x : l) {
     cout << x << " ";
   }
@@ -13,21 +13,18 @@ void mostra(const list<int>& l) {
 
 int main(int argc, char* argv[]) {
   ifstream arq(argv[1]);
-  string palavra;
+  list<string> l;
+  string n;
 
-  list<int> l;
-
-  int n;
   while (arq >> n) {
     l.push_back(n);
   }
 
-  // remove os numeros repetidos
   if (l.size() > 1) {
     l.sort();
 
-    list<int>::iterator it1 = l.begin();
-    list<int>::iterator it2 = it1;
+    list<string>::iterator it1 = l.begin();
+    list<string>::iterator it2 = it1;
     it2++;
 
     while (it2 != l.end()) {
