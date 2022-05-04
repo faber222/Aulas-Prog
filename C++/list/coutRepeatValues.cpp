@@ -1,21 +1,11 @@
 #include <errno.h>
 
-#include <cctype>
 #include <fstream>
 #include <iostream>
 #include <list>
 #include <string>
 
 using namespace std;
-
-bool contem(const list<string>& l, const string& algo) {
-  for (auto& w : l) {
-    if (algo == w) {
-      return true;
-    }
-  }
-  return false;
-}
 
 int main(int argc, char* argv[]) {
   ifstream arq(argv[1]);
@@ -24,25 +14,29 @@ int main(int argc, char* argv[]) {
     return errno;
   }
 
-  list<string> lidas;
+  list<string> l, l2;
+  list<int> vezes;
 
   string palavra;
   while (arq >> palavra) {
-    int x = 0;
-    x++;
-    if (!contem(lidas, palavra)) {
-      lidas.push_back(palavra);
+    l.push_back(palavra);
+    l2.push_back(palavra);
+  }
+  l.sort();
+  l.unique();
 
-    } else {
-      x++;
+  for (auto& i : l) {
+    int x = 0;
+    for (auto& j : l2) {
+      if (i == j) {
+        x++;
+      }
     }
-    lidas.push_back(to_string(x));
+    vezes.push_back(x);
   }
 
-  for (auto it = lidas.begin(); it != lidas.end();) {
-    cout << *it;
-    it++;
-    cout << " " << *it;
-    cout << endl;
+  for (auto it = l.begin(); it != l.end(); it++) {
+    cout << *it << " " << vezes.front() << endl;
+    vezes.pop_front();
   }
 }
