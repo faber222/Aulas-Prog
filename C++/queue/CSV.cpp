@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
       }
       j++;
     }
-    
+
     int ult = inseridor.rfind(",");
     exc = inseridor.size() - 1;
     if (ult == exc) inseridor.erase(ult, 1);
