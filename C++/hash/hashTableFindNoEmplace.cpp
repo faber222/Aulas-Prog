@@ -24,17 +24,11 @@ int main() {
 
     cout << "Produto: ";
     getline(cin, produto);
-    if (produto.empty()) break;  // teclou somente ENTER ...
-
-    // procura a chave, e obtém um iterador para o par chave e valor
-    auto it = tab.find(produto);
-
-    // se iterador aponta o fim da tabela, então chave não existe
-    if (it == tab.end()) {
-      cout << produto << " desconhecido" << endl;
-    } else {
-      // caso contrário, chave existe, então mostra o respectivo
-      cout << "Preço: " << it->second << endl;
-    }
+    if (produto.empty())
+      break;  // teclou somente ENTER ...
+              // acessa o valor associado à chave k
+    // se essa chave não existir ainda na tabela, ela
+    // é adicionada e mapeada a uma valor default
+    cout << "Preço: " << tab[produto] << endl;
   }
 }
