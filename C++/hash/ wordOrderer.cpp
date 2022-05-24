@@ -3,7 +3,6 @@
 #include <list>
 #include <string>
 #include <unordered_map>
-#include <unordered_set>
 
 using namespace std;
 
@@ -30,7 +29,7 @@ int main(int argc, char* argv[]) {
   l.sort();
   for (auto& y : l) {
     for (auto& z : tab[y]) {
-      cout << z << " ";
+      cout << z << " " << y;
     }
     cout << endl;
   }
