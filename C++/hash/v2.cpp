@@ -7,6 +7,11 @@
 
 using namespace std;
 
+bool comp(const pair<string, int>& s1, const pair<string, int>& s2) {
+  if (s1.second == s2.second) return s1.first < s2.first;
+  return s1.second > s2.second;
+}
+
 int main(int argc, char* argv[]) {
   ifstream arq(argv[1]);
   string x = argv[2];
@@ -14,7 +19,6 @@ int main(int argc, char* argv[]) {
   int count = 0;
 
   unordered_map<string, int> totais;
-  unordered_map<int, list<string>> tab;
 
   string palavra;
   int w = stoi(x);
@@ -27,24 +31,13 @@ int main(int argc, char* argv[]) {
     }
   }
 
-  for (auto& i : totais) {
-    tab[i.second].push_back(i.first);
-  }
+  list<pair<string, int>> l2(totais.begin(), totais.end());
 
-  for (auto& x : tab) {
-    l.push_back(x.first);
-  }
-  l.sort();
-  l.reverse();
+  l2.sort(comp);
 
-  for (auto& y : l) {
-    tab[y].sort();
-    for (auto& z : tab[y]) {
-      if (count >= w) {
-        break;
-      }
-      cout << z << " " << y << " ";
-      count++;
-    }
+  for (auto& y : l2) {
+    cout << y.first << " " << y.second << endl;
+    count++;
+    if (count == w) break;
   }
 }
