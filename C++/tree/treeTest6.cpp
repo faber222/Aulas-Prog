@@ -13,7 +13,7 @@ using prglib::arvore;
 
 struct teste {
   string x;
-  int y;
+  string y;
 };
 
 void separa(const string& algo, char sep, arvore<string>& q) {
@@ -31,9 +31,10 @@ void separa(const string& algo, char sep, arvore<string>& q) {
     l.push_back(memoria);
     cout << memoria << endl;
   }
-
-  lista.x = l.begin();
-  lista.y = l.end();
+  /*
+    lista.x = l.begin();
+    lista.y = l.end();
+    */
 };
 
 int main(int argc, char** argv) {

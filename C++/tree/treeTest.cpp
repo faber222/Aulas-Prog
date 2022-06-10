@@ -6,9 +6,6 @@ using namespace std;
 
 using prglib::arvore;
 
-/*
- *
- */
 int main(int argc, char** argv) {
   arvore<int> a;
 
