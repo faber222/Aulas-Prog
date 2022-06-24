@@ -6,7 +6,9 @@ using namespace std;
 
 #define SIZE (1 << 23)
 
-// sem limite
+// g++ -std=c++11
+
+// limita em 7
 
 int main(int argc, char* argv[]) {
   if (argc < 2) {
@@ -15,7 +17,7 @@ int main(int argc, char* argv[]) {
   }
 
   int size = stoi(argv[1]) * (1 << 20);
-  char* mem = new char[size];
+  char mem[size];
 
   cout << "Criou vetor com " << size / 1024 << " kB" << endl;
   cout << "- Endereço do vetor=" << hex << (void*)mem << endl;
@@ -24,8 +26,6 @@ int main(int argc, char* argv[]) {
        << ((char*)&size - mem) / 1024 << endl;
   bzero(mem, size);
   cout << "Zerou a memória do vetor ..." << endl;
-
-  delete[] mem;
 
   return 0;
 }

@@ -13,7 +13,7 @@ struct vectorMemory {
 };
 
 // operacoes do vetor
-vectorMemory vetor_cria();
+vectorMemory vetor_cria(unsigned int capacidades);
 
 // destroi um vetor
 void vetor_destroi(vectorMemory& v);
@@ -22,7 +22,7 @@ void vetor_destroi(vectorMemory& v);
 void vetor_limpa(vectorMemory& v);
 
 // obtem o valor de uma posicao do vetor
-int vetor_obtem(const vectorMemory& v, unsigned int posicao);
+int vetor_obtem(vectorMemory& v, unsigned int posicao);
 
 // modifica o valor de uma posicao do vetor
 void vetor_altera(vectorMemory& v, unsigned int posicao, int valor);

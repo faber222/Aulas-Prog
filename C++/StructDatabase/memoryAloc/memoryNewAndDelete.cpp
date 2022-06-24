@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// g++ -std=c++11
+
 template <typename T>
 void mostra(const string& varname, T* val) {
   cout << "######################################################" << endl;
@@ -32,7 +34,7 @@ int main() {
 
   // ou
 
-  /*  
+  /*
   // aloca dinamicamente memória para um valor do tipo int e depois para um
   double
   // e armazena valores nas áreas de memória alocadas

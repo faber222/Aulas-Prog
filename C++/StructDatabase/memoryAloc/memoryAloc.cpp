@@ -8,6 +8,9 @@ using namespace std;
 // Parâmetros:
 //  varname: nome da variável
 //  val: uma referência à variável a ser mostrada
+
+// g++ -std=c++11
+
 template <typename T>
 
 void mostra(const string& varname, T& val) {
