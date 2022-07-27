@@ -19,9 +19,9 @@ int main(int argc, char** argv[]) {
   list<int> dados = {1, 2, 3, 4, 5, 6, 7, 8};
   arvore<int> arv(dados);
   cout << "altura: " << arv.altura() << endl;
-  grava_arvore("antes.txt", arv);
+  grava_arvore("antes.dot", arv);
 
   arv.balanceia(true);
   cout << "altura: " << arv.altura() << endl;
-  grava_arvore("depois.txt", arv);
+  grava_arvore("depois.dot", arv);
 }

@@ -55,8 +55,13 @@ int main(int argc, char** argv[]) {
   }
   arv.balanceia(true);
   grava_arvore("depois.dot", arv);
-  ofstream arq2("numeros.txt");
-  for (auto it = arv.preorder_begin(); it != arv.preorder_end(); it++) {
+  ofstream arq2("numeros1.txt");
+  ofstream arq3("numeros2.txt");
+  for (auto& x : arv) {
+    arq3 << x << endl;
+  }
+
+  for (auto it = arv.inorder_begin(); it != arv.inorder_end(); it++) {
     arq2 << *it << endl;
   }
 }

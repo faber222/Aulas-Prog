@@ -17,7 +17,7 @@ void cria_arvore(arvore<string>& arv, list<string> palavra) {
 int main() {
   arvore<string> arv2;
   list<string> dados = {"mar", "ferias", "praia", "areia",
-                        "luz", "onda",   "sol"};
+                        "luz", "onda",   "sol",   "mar"};
   cria_arvore(arv2, dados);
 
   for (auto& x : arv2) {
